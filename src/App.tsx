@@ -66,9 +66,9 @@ const App: React.FC = () => {
         <select
   className="form-select w-50 mx-auto"
   style={{
-    background: 'rgba(255, 255, 255, 0.02)',  // Almost invisible initially
+    background: 'rgba(255, 255, 255, 0.02)',  
     color: '#ffffff',
-    border: '1px solid rgba(255, 255, 255, 0.1)',  // Very light border
+    border: '1px solid rgba(255, 255, 255, 0.1)',  
     borderRadius: '12px',
     backdropFilter: 'blur(8px)',
     WebkitBackdropFilter: 'blur(8px)',
@@ -103,10 +103,9 @@ const App: React.FC = () => {
           </select>
         </div>
 
-        {/* Map */}
         <MapView earthquakes={earthquakes} />
 
-        {/* Earthquake Cards */}
+        
         <div className="row mt-5">
           {earthquakes.map((quake) => (
             <div key={quake.id} className="col-md-4 mb-4">

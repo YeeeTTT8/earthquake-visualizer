@@ -34,7 +34,7 @@ const EarthquakeCard: React.FC<EarthquakeCardProps> = ({ quake }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      {/* BADGE */}
+     
       <div
         style={{
           position: 'absolute',
@@ -56,7 +56,7 @@ const EarthquakeCard: React.FC<EarthquakeCardProps> = ({ quake }) => {
         {quake.magnitude.toFixed(1)}
       </div>
 
-      {/* CARD BODY */}
+   
       <div className="card-body">
         <h5 className="card-title">{quake.place}</h5>
         <p className="card-text">

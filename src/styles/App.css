@@ -1,19 +1,15 @@
-/* App.css */
 
-/* Body full dark */
 body {
   background-color: #0f0f0f;
   color: white;
   font-family: 'Poppins', sans-serif;
 }
 
-/* Heading */
 h1 {
   color: #ffffff;
   font-weight: 700;
 }
 
-/* Aurora background animation */
 @keyframes aurora {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -33,7 +29,6 @@ h1 {
   z-index: 0;
 }
 
-/* Dropdown Select */
 select {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
