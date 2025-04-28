@@ -63,24 +63,40 @@ const App: React.FC = () => {
 
         {/* Filter Dropdown */}
         <div className="mb-5 text-center">
-          <select
-            className="form-select w-50 mx-auto"
-            style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              color: 'white',
-              border: '1px solid rgba(255,255,255,0.3)',
-              backdropFilter: 'blur(12px)',
-              WebkitBackdropFilter: 'blur(12px)',
-            }}
-            onChange={(e) => {
-              const filter = parseFloat(e.target.value);
-              if (filter === 0) {
-                window.location.reload();
-              } else {
-                setEarthquakes(prev => prev.filter((eq: Earthquake) => eq.magnitude >= filter));
-              }
-            }}
-          >
+        <select
+  className="form-select w-50 mx-auto"
+  style={{
+    background: 'rgba(255, 255, 255, 0.02)',  // Almost invisible initially
+    color: '#ffffff',
+    border: '1px solid rgba(255, 255, 255, 0.1)',  // Very light border
+    borderRadius: '12px',
+    backdropFilter: 'blur(8px)',
+    WebkitBackdropFilter: 'blur(8px)',
+    padding: '12px',
+    fontSize: '1rem',
+    transition: 'all 0.3s ease',
+    boxShadow: 'none',
+  }}
+  onFocus={(e) => {
+    (e.target as HTMLSelectElement).style.background = 'rgba(255, 255, 255, 0.08)';
+    (e.target as HTMLSelectElement).style.borderColor = '#8b5cf6';  // Purple glow
+    (e.target as HTMLSelectElement).style.boxShadow = '0 0 10px rgba(139, 92, 246, 0.5)';
+  }}
+  onBlur={(e) => {
+    (e.target as HTMLSelectElement).style.background = 'rgba(255, 255, 255, 0.02)';
+    (e.target as HTMLSelectElement).style.borderColor = 'rgba(255, 255, 255, 0.1)';
+    (e.target as HTMLSelectElement).style.boxShadow = 'none';
+  }}
+  onChange={(e) => {
+    const filter = parseFloat(e.target.value);
+    if (filter === 0) {
+      window.location.reload();
+    } else {
+      setEarthquakes(prev => prev.filter((eq: Earthquake) => eq.magnitude >= filter));
+    }
+  }}
+>
+
             <option value="0">Show All Earthquakes</option>
             <option value="4">Magnitude 4.0+</option>
             <option value="5">Magnitude 5.0+</option>
